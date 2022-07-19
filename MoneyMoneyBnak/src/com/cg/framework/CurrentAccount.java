@@ -1,12 +1,37 @@
 package com.cg.framework;
 
-public abstract class CurrentAccount extends BankAccount {
-	float creditLimit;
-	void withdraw(float creditLimit)
-	{
+public abstract class CurrentAccount extends BankAccount{
+
+
+
+
+	private final float creditLimit=100;
+	
+
+	public CurrentAccount(int accNo, String accNm, float accBal, float creditLimit2) {
+		super(accNo, accNm, accBal);
 		
 	}
-	public String toString() {
-		return "CurrentAccount [creditLimit=" + creditLimit + ", accNo="+ accNO +", accNm=" + accNm +",
-				+", toString()=" + super.toString() +", getClass()=" + getClass() +",hashCode()="+ "]";
+
+
+	
+ public float getCreditLimit() {
+		return creditLimit;
 	}
+
+
+ public void withdraw(float creditLimit) {
+	 
+ }
+
+
+@Override
+public String toString() {
+	return "CurrentAcc [creditLimit=" + creditLimit + ", getCreditLimit()=" + getCreditLimit() + ", getAccNo()="
+			+ getAccNo() + ", getAccNm()=" + getAccNm() + ", getAccBal()=" + getAccBal() + ", toString()="
+			+ super.toString() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
+}
+
+
+
+}

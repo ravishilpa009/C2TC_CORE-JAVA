@@ -1,21 +1,23 @@
-package com.cg.framework;
+package com.cg.bankapplication;
 
-public abstract class CurrentAccount extends BankAccount {
-	private final float creditLimit;
+import com.cg.framework.CurrentAccount;
+
+public class MMCurrentAccount extends CurrentAccount 
+{
 	
-	public CurrentAccount(int accNo, String accNm, float accBal, float creditLimit) {
-		super(accNo, accNm, accBal);
-		this.creditLimit = creditLimit;
+	public MMCurrentAccount(int accNo, String accNm, float accBal, float creditLimit) 
+	{
+		super(accNo,accNm,accBal,creditLimit);
 	}
+	
 	public void withdraw(float creditLimit)
 	{
-		
-	}
+      System.out.println("Check the current account balance:" +getAccBal());
+}
+
 	@Override
 	public String toString() {
-		return "CurrentAccount [creditLimit=" + creditLimit + ", toString()=" + super.toString() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + "]";
+		return "MMCurrentAcc [toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()="
+				+ hashCode() + "]";
 	}
-	
-	
 }

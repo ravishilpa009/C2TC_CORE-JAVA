@@ -1,19 +1,51 @@
 package com.cg.framework;
 
-public  abstract class SavingsAccount extends BankAccount  {
-	private boolean isSalary;
-	private static final float MINBAL=1;
-	public SavingsAccount(int accNO,String accNm,float accBal) {
-		super(accNo,accNm,accBal);
-	}
-	public void withdraw(float accBal)
-	{
-		
-	}
-	public String toSring{} {
-		return "SavingAcc [isSalary=" + isSalary +", accNO= +",accNm=" +accNm +", accBal="+accBal"
-				+ ", toString()=" + super.toString() +",getClass()="+geClass()+",hashCode()=" +hashCode()
-				+"]";
-		
+public abstract class SavingsAccount extends BankAccount{
 
+
+
+	private boolean isSalary;
+	private static final float MINBAL=100;
+
+
+	public SavingsAccount(int accNo, String accNm, float accBal, boolean isSalary) {
+		super(accNo, accNm, accBal);
+		this.isSalary = isSalary;
+	}
+
+
+
+	public boolean isSalary() {
+		return isSalary;
+	}
+
+
+
+	public void setSalary(boolean isSalary) {
+		this.isSalary = isSalary;
+	}
+
+
+
+	public static float getMinbal() {
+		return MINBAL;
+	}
+
+
+
+	public void withdraw(float accBal) {
+
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "SavingAcc [isSalary=" + isSalary + ", isSalary()=" + isSalary() + ", getAccNo()=" + getAccNo()
+				+ ", getAccNm()=" + getAccNm() + ", getAccBal()=" + getAccBal() + ", toString()=" + super.toString()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
+	}
+	
+
+	
 }

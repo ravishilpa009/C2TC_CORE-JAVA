@@ -1,22 +1,30 @@
-package com.cg.framework;
+package com.cg.bankapplication;
 
-public abstract class SavingsAccount extends BankAccount  {
-	private boolean isSalary;
-	private static final float MINBAL =1;
-	public SavingsAccount(int accNo, String accNm, float accBal, boolean isSalary) {
-		super (accNo, accNm, accBal);
-	}
-	public void withdraw(float accBal)
-	{
+import com.cg.framework.SavingsAccount;
+
+
+public class MMSavingAccount extends SavingsAccount {
+		private static final float MINBAL = 2;
+		public MMSavingAccount(int accNo, String accNm, float accBal, boolean issalary)
+		{
+			super(accNo, accNm, accBal, issalary);
+		}
 		
-	}
-	@Override
-	public String toString() {
-		return "SavingsAccount [isSalary=" + isSalary + ", toString()=" + super.toString() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + "]";
-	}
-	
+		public void withdraw(float accBal)
+		{
+			System.out.println("Withdrawl amount:"+accBal);
+
+		}
+
+		@Override
+		public String toString() {
+			return "MMSavingAccount [toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()="
+					+ hashCode() + "]";
+		}
+
+		
 }
+	
 	
 
 
